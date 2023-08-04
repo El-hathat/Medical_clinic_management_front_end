@@ -1,0 +1,69 @@
+<app-admin></app-admin>
+
+		
+		
+		<section id="content">
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Utilisateurs</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Utilisateurs</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" routerLink='/Admin'>Home</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+     
+
+			
+	
+	 <div class="wst">
+	
+		<a routerLink="/addsec" >
+			<img src="./assets/img/add.png" class="add-user-icon" alt="add-user-icon">
+		</a>
+	<table>
+		<thead>
+			<td class="table-header">id</td>
+			<td class="table-header">nom</td>
+			<td class="table-header">prenom</td>
+			<td class="table-header">etat</td>
+			<td class="table-header">email</td>
+			<td class="table-header">options</td>
+		</thead>
+		<tbody> 
+			<tr *ngFor="let item of secs">
+				<td>{{item.cin}}</td>
+				<td>{{item.nom}}</td>
+				<td>{{item.prenom}}</td>
+				<td >
+					<a class="status"*ngIf="!item.etat" (click)="blockcmpt(item.cin)" routerLink="/Utilisteur">
+						
+						Active
+					</a>
+					<a class="status"  *ngIf="item.etat" (click)="blockcmpt(item.cin)" routerLink="/Utilisteur">
+						
+						Désactiver
+					</a>
+				</td>
+				<td>{{item.email}}</td>
+				<td>
+					<div class="options-btn-wrapper">
+						
+						<a class="option-btn delete" (click)="supprimer(item.cin)" routerLink="/Utilisteur">
+							supprimer
+						</a>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+			
+			
+		</div>

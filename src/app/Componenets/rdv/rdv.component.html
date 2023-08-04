@@ -1,0 +1,146 @@
+<app-admin></app-admin>
+
+		
+		
+		<section id="content">
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					
+					<h1>Liste des rendez-vous</h1>
+					
+					<ul class="breadcrumb">
+
+						<li>
+							<a href="#">Patients</a>
+						</li>
+						
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" routerLink='/Admin'>Home</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+    <div class="page-wrapper bg-red  p-b-100 font-robo" >
+        <div class="wrapper wrapper--w960"  >
+            <div class="tete">
+                <div class="container" style="margin-left: -226%">
+                    <div class="element" >               <input  class="btn btn--radius btn--blue1" class="input--style-2" type="text" placeholder="&#xF002; Cherecher par CIN..." name="prenom" style="height: 40px;" [(ngModel)]="rechCin"  (input)="rechercherCin()">
+                    </div>
+                    <div class="element"><input type="date" name="" id="" style="height: 40PX;"  class="elems"  [(ngModel)]="rechDate"  (input)="rechercherDate()">
+                    </div>
+                  </div>
+               
+        </div>
+        <br>
+        
+        <div class="card card-2" style="margin-left: -4%;width: 104%;">
+            
+            <div class="card-heading" style="max-width: 12cm;">
+                <h2 class="title" style="margin-left: 180px;">Les rendez-vous</h2>
+                
+                    <div style="justify-content: center;align-items: center;width: 12cm;">
+                        <table style="margin-left: 40px;width: 20cm;">
+                            <tr>
+                                <th style="width: 20%;">CIN</th>
+                    <th style=" position: relative;width: 20%;">Date RDV</th>
+                    <th style=" width: 20%;">Heure RDV</th>
+                    <th style=" width: 20%;">Note</th>
+                    <th style="width: 20%;">option</th>
+                            </tr>
+                    <hr>
+                    <tr *ngFor="let item of rdv">
+                        <td style="text-align: center;">{{item.patient.cin}}</td>
+                        <td style="text-align: center;">{{item.dateRDV}}</td>
+                        <td style="text-align: center;">{{item.heureRDV}}</td>
+                        <td style="text-align: center;">{{item.note}}</td>
+                        <td style="text-align: center;" >   
+                            
+                            <div  (click)="delRdvByNum(item.num)"  class="btn btn--radius blue1 "  style="background-color: red;"  ><i style="font-weight: 900;" class='bx bx-trash'></i></div>
+                        </td>
+                    </tr>
+                   
+                    
+                    
+                </table>
+            </div>
+                <br>
+              
+              
+            </div>
+
+<div class="vertical-line"></div>
+
+            <div class="card-body" >
+                <h4 class="title">Ajouter rendez-vous</h4>
+                <br><br>
+                <form style="margin-left:-60px ;"[formGroup]="rdvForm" (ngSubmit)=" handelSubmit()">
+                    
+                    <div class="row row-space">
+                        <div class="col-2">
+                            <div class="input-group">
+                                <input   class="input--style-2" type="text" placeholder="CIN"  [(ngModel)]="cin"  [ngModelOptions]="{standalone: true}">
+                                   </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="input-group">
+                                    <input formControlName="dateRDV" class="input--style-2 elem" type="date" placeholder="Date Rendez-vous" name="dtn"> 
+                                  
+                            </div></div></div>
+
+
+                            <div class="row row-space">
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <input formControlName="heureRDV" class="input--style-2" type="time" placeholder="Heure" name="diagnostique">
+                                           </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="input-group">
+                                    
+                                            
+                                        <input formControlName="note" class="input--style-2" type="text" placeholder="note" name="note">
+                                        
+                                    </div></div></div>
+
+
+
+                  
+                                        <button class="btn btn--radius btn--green p-l-50" type="submit">Valider</button>
+                    
+
+                    
+
+                                            <!--	<div class="row row-space">
+                                                        <div class="col-2">
+                                                            
+                                                                <div class="p-t-30">
+                                                                    <button class="btn btn--radius btn--red" type="reset">annuler</button>
+                                                                
+                                                                    </div>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            
+                                                                
+                                                                    <div class="p-t-30">
+                                                                        <button class="btn btn--radius btn--green" type="submit">Valider</button>
+                                                                  
+                                                           </div> </div></div>-->	
+
+                                                        
+                </form>
+            </div>
+
+            
+                                                                  
+
+        </div>
+        
+
+
+
+    </div>
+</div>

@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../../../../../Desktop/prjt/Angular-10-Spring-Boot-CRUD-Full-Stack-App-master"
+		},
+		{
+			"path": "../../../../../../../../../Desktop/prj/prj/front-end/CAB"
+		},
+		{
+			"path": "../../../../../../.."
+		},
+		{
+			"path": "../../../../../../../../../../../xampp/htdocs/app"
+		}
+	],
+	"settings": {
+		"DockerRun.DisableDockerrc": true
+	}
+}

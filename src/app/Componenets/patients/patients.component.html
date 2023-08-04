@@ -1,0 +1,101 @@
+<app-admin></app-admin>
+
+		
+		
+		<section id="content">
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					
+					<h1>Listes des patients</h1>
+					
+					<ul class="breadcrumb">
+
+						<li>
+							<a href="#">Patients</a>
+						</li>
+						
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" routerLink='/Admin'>Home</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+    <div class="page-wrapper bg-red  p-b-100 font-robo">
+        <div class="wrapper wrapper--w960">
+            <div class="tete">
+                       
+                <button class="btn btn--radius btn--blue1" type="submit" routerLink="/addpatient" *ngIf="!test">Nouveau Patient</button>
+                <button class="btn btn--radius btn--blue2" type="submit" routerLink="./attend">Salle d'attente</button>
+        </div><br>
+            <div class="card card-2 ">
+                <div class="p-l-10">
+              <div class="d1">
+                
+                <div class="row row-space">
+                  <div class="col-2">
+                       <div class="input-group">
+                            <input class="input--style-2" type="text" placeholder="&#xF002; Cherecher par CIN" [(ngModel)]="rechcin" (input)="rechercherCin()" >
+                              </div>
+                  </div>
+                    <div class="col-2">
+                        <div class="input-group">
+                               <input class="input--style-2" type="text" placeholder="&#xF002; Cherecher par Nom" [(ngModel)]="rechNom" (input)="rechercherNom()"> 
+                                        </div></div>
+              </div>
+            </div>
+<br>
+            <div class="tbl">
+
+                <table>
+                    <thead>
+                       
+                        <th class="table-header">CIN</th>
+                        <th class="table-header">Nom</th>
+                        <th class="table-header">Prenom</th>
+                        <th class="table-header">Age</th>
+                        <th class="table-header">Email</th>
+                        <th class="table-header">Genre</th>
+                        <th class="table-header">Adresse</th>
+                        <th class="table-header">Tel</th>
+                        <th class="table-header">Actions</th>
+                    </thead>
+                    <tbody> 
+                       <tr *ngFor="let item  of allPatients ">
+                            
+                            <td>{{item.cin}}</td>
+                            <td>{{item.nom}}</td>
+                            <td>{{item.prenom}}</td>
+                            <td>{{item.age}}</td>
+                            <td>{{item.email}}</td>
+                            <td>{{item.sexe}}</td>
+                            <td>{{item.adresse}}</td>
+                            <td>{{item.tel}}</td>
+                            <td *ngIf="item.cin!=''">
+
+                              
+                                <div class="btn btn--radius blue1 " style="background-color: blue;" (click)="addToSalle(item.cin)" *ngIf="item.etat!='En Attente'"><i style="font-weight: 900;" class='bx bx-user-plus' id="addu" ></i></div>
+                                <div class="btn btn--radius blue1 " style="background-color: blue;" *ngIf="item.etat=='En Attente'"><i style="font-weight: 900;" class='bx bx-check-circle' id="addu" ></i></div>
+                               
+                                <div class="btn btn--radius blue1 " style="background-color: green;"*ngIf="test"  (click)="versDossier(item.cin)"><i style="font-weight: 900;" class='bx bx-folder-plus'></i></div>
+                                <div class="btn btn--radius blue1 " style="background-color: red;" (click)="supprimer(item.cin)"><i style="font-weight: 900;" class='bx bx-trash' id="del"></i></div>
+                                <div class="btn btn--radius blue1 " style="background-color:rgb(255, 0, 0);"*ngIf="test" (click)="versCertificat(item.cin)"><i style="font-weight: 900;" class='bx bx-book-add' id="upd" ></i></div>
+                         
+                            </td>
+                        </tr>
+
+                       
+                       
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

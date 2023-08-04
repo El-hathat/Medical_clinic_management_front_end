@@ -1,0 +1,99 @@
+<app-admin></app-admin>
+
+		
+		
+		<section id="content">
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					
+					<h1>Certificat Medicale</h1>
+					
+					<ul class="breadcrumb">
+
+						<li>
+							<a >Certificat Medicale</a>
+						</li>
+						
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" routerLink='/Admin'>Home</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		<!-- Register Form -->
+        <div class="page-wrapper bg-red p-t-180 p-b-100 font-robo">
+            <div class="wrapper wrapper--w960">
+                <div class="card card-2">
+                   
+                    <div class="card-body">
+                        <h2 class="title" style="text-align: center;">Certificat Medicale</h2>
+                        <form [formGroup]="medForm"  >
+                            
+                            <div class="row row-space">
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <input class="input--style-2" type="text" placeholder="CIN" name="cin" disabled value="{{patient.cin}}">
+                                           </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="input-group">
+                                            <input class="input--style-2" type="text" placeholder="Nom" name="nom" disabled value="{{patient.nom}}"> 
+                                          
+                                    </div></div></div>
+    
+    
+                                    <div class="row row-space">
+                                        <div class="col-2">
+                                            <div class="input-group">
+                                                <input class="input--style-2" type="text" placeholder="Prenom" name="prenom" disabled value="{{patient.prenom}}">
+                                                   </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <div class="input-group">
+                                                <input class="input--style-2" type="number" placeholder="Age" name="Age" disabled   value="{{patient.age}}">
+                                            </div></div></div>
+    
+    
+    
+                                            <div class="row row-space">
+                                                <div class="col-2">
+                                                    <div class="input-group">
+                                                        <input formControlName="nbjours"class="input--style-2" type="number" placeholder="Nombre des jours" name="nbjrs"> 
+                                                    </div>
+                                                </div>
+                                                <div class="col-2">
+                                                    <div class="input-group">
+                                                        
+                                                          
+                                                    </div></div></div>
+    
+    
+                                                   
+                            
+                                                    <div class="input-group">
+                                                        <textarea formControlName="type" style="width: 100%;height: 200px; max-width: 900px;max-height: 200px;" class="input--style-2" placeholder="Motif"></textarea>
+                                                         
+                                                    </div>
+                             
+                                                             
+                                                    <div class="row row-space" style="margin-left: 200px;">
+                         
+                                                        <div class="col-2">
+                                                          
+                                                                
+                                                                <button class="btn btn--radius btn--green" style="margin-left: 80px;" type="submit" (click)=" handelSubmit()" >vALIDER</button>
+                                                    
+                                                            </div></div>            
+                                                                           
+                                                                              
+                                                                 
+
+                                                                
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>

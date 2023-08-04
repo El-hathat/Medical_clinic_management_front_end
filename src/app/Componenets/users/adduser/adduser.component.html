@@ -1,0 +1,108 @@
+<app-admin></app-admin>
+
+		
+		
+		<section id="content">
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					
+					<h1>Utilisateurs</h1>
+					
+					<ul class="breadcrumb">
+
+						<li>
+							<a href="#">Utilisateurs</a>
+						</li>
+						
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" routerLink='/Admin'>Home</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+            <div class="page-wrapper bg-red p-t-180 p-b-100 font-robo">
+                <div class="wrapper wrapper--w960">
+                    <div class="card card-2">
+                        <div class="card-heading"></div>
+                        <div class="card-body">
+                            <h2 class="title">Ajouter Sercretaire</h2>
+                            <form [formGroup]="medForm" (ngSubmit)=" handelSubmit()">
+                                
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <input formControlName="cin" class="input--style-2" type="text" placeholder="Cin" name="cin">
+                                               </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <div class="rs-select2 js-select-simple select--no-search">
+                                                <input formControlName="nom" class="input--style-2" type="text" placeholder="Nom" name="nom"> 
+                                              
+                                        </div></div></div>
+        
+        
+                                        <div class="row row-space">
+                                            <div class="col-2">
+                                                <div class="input-group">
+                                                    <input formControlName="prenom" class="input--style-2" type="text" placeholder="Prenom" name="prenom">
+                                                       </div>
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="input-group">
+                                                    <div class="rs-select2 js-select-simple select--no-search">
+                                                        <input formControlName="email" class="input--style-2" type="email" placeholder="Email" name="email"> 
+                                                      
+                                                </div></div></div>
+        
+        
+        
+                                                <div class="row row-space">
+                                                    <div class="col-2">
+                                                        <div class="input-group">
+                                                            <input class="elems" class="input--style-2" type="text" placeholder="Nom cabinet" name="nomcabinet" style="width: 250px;" value="{{data}}" disabled>
+                                                               </div>
+                                                   </div>
+        
+        
+                                                        <div class="row row-space">
+                                                            <div class="col-2">
+                                                                <div class="input-group">
+                                                                    <input formControlName="pwd" class="input--style-2" type="password" placeholder="Mot de passe" name="pwd">
+                                                                       </div>
+                                                            </div>
+                                                            <div class="col-2">
+                                                                <div class="input-group">
+                                                                    <div class="rs-select2 js-select-simple select--no-search">
+                                                                      
+                                                                </div></div></div>
+                                
+        
+                                
+        
+                                                                <div class="row row-space">
+                                                                    <div class="col-2">
+                                                                        
+                                                                            <div class="p-t-30">
+                                                                                <button class="btn btn--radius btn--red" type="reset" onclick="history.go(-1)">annuler</button>
+                                                                            
+                                                                                </div>
+                                                                    </div>
+                                                                    <div class="col-2">
+                                                                        
+                                                                            
+                                                                                <div class="p-t-30">
+                                                                                    <button class="btn btn--radius btn--green" type="submit">Valider</button>
+                                                                              
+                                                                       </div> </div></div>
+
+                                                                    </div></div></div></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>

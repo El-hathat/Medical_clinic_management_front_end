@@ -1,0 +1,185 @@
+<app-admin></app-admin>
+
+		
+		
+		<section id="content">
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					
+					<h1>Liste des rendez-vous</h1>
+					
+					<ul class="breadcrumb">
+
+						<li>
+							<a href="#">Patients</a>
+						</li>
+						
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" routerLink='/Admin'>Home</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+            <div class="page-wrapper bg-red p-t-180 p-b-100 font-robo" >
+                <div class="wrapper wrapper--w960" >
+                    
+                    <div class="row row-space">
+                        <div class="col-2">
+                                <a class="btn btn--radius  " style="background-color: cadetblue;"  >Dossier Medicale</a>
+                                  
+                        </div>
+                        <div class="col-2">
+                            
+                                <a class="btn btn--radius btn-head" style="margin-left: -360px;" (click)="versDossier(cin)">Consultation</a>
+                            </div></div>
+                    
+                
+                    <div class="card card-2" >
+                        
+                        <div class="card-heading" >
+                            <h2 class="title" style="margin-left: 160px;">Informations personnelle du Patient </h2>
+                            <form  #form="ngForm"  [formGroup]="medForm" (ngSubmit)=" handelSubmit()">
+                                
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <input class="input--style-2" type="text"formControlName="cin"  placeholder="CIN"   [(ngModel)] = "pat.cin"   name="cin" readonly/>
+                                               </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            
+                                                <input class="input--style-2"formControlName="nom" type="text" placeholder="Nom"  [(ngModel)] = "pat.nom" name="nom" /> 
+                                              
+                                        </div></div></div>
+        
+        
+                                        <div class="row row-space">
+                                            <div class="col-2">
+                                                <div class="input-group">
+                                                    <input class="input--style-2"formControlName="prenom" type="text" placeholder="Prenom" [(ngModel)] = "pat.prenom" name="prenom" />
+                                                       </div>
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="input-group">
+                                                
+                                                        
+                                                        <select class="input--style-2 "formControlName="sexe" [(ngModel)] = "pat.sexe" name="sexe">
+                                                            <option value="" selected disabled>Genre</option>
+                                                            <option *ngFor="let option of options" [value]="option" [selected]="option === pat.sexe">{{ option }}</option>
+
+                                                        </select>
+                                                </div></div></div>
+        
+        
+        
+                                                <div class="row row-space">
+                                                    <div class="col-2">
+                                                        <div class="input-group">
+                                                            <input class="input--style-2"  type="number"formControlName="age" placeholder="Age" name="age" [(ngModel)] = "pat.age">
+                                                               </div>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <div class="input-group">
+                                                                    <input formControlName="tel" class="input--style-2" type="text" placeholder="N° Telephone" name="tel" [(ngModel)] = "pat.tel"> 
+                                                              
+                                                        </div></div></div>
+        
+        
+                                                        <div class="row row-space">
+                                                            <div class="col-2">
+                                                                <div class="input-group">
+                                                                    <input formControlName="adresse" class="input--style-2" type="text" placeholder="Adresse" name="adresse" [(ngModel)] = "pat.adresse">
+                                                                       </div>
+                                                            </div>
+                                                            <div class="col-2">
+                                                                <div class="input-group">
+                                                                    <div class="rs-select2 js-select-simple select--no-search">
+                                                        
+                                                                        <input formControlName="email" class="input--style-2" type="email" placeholder="E-mail" name="email" [(ngModel)] = "pat.email">
+                                                   
+                                                                </div>
+                                                                </div></div></div>
+                                
+        
+                                
+        
+                                                                
+        
+                                                                    
+                            </form>
+                        </div>
+        
+        <div class="vertical-line"></div>
+        
+                        <div class="card-body" >
+                            <h2 class="title">Dossier Medicale</h2>
+                            <br><br><br><br><br><br>
+                            <form style="margin-left:-60px ;"[formGroup]="medForms" (ngSubmit)=" handelSubmit()">
+                                
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <input class="input--style-2"  type="text" placeholder="N° Dossier" name="num" readonly>
+                                               </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                                <input  class="input--style-2 elem" type="date" placeholder="Date Naissance" name="dateNaissance" formControlName="date_Naissance"> 
+        
+                                        </div></div></div>
+        
+        
+                                        <div class="row row-space">
+                                            <div class="col-2">
+                                                <div class="input-group">
+                                                    <select formControlName="sang" class="input--style-2 " name="sang">
+                                                        <option value="" selected disabled>G Sanguin</option>
+                                                        <option value="A+">A+</option>
+                                                        <option value="B+">B+</option>
+                                                        <option value="AB+">AB+</option>
+                                                        <option value="B-">B-</option>
+                                                        <option value="A-">A-</option>
+                                                        <option value="AB-">AB-</option>
+                                                        <option value="O+">O+</option>
+                                                        <option value="O-">O-</option>
+                                                    </select>
+                                                        </div>
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="input-group">
+                                                
+                                                    <select  class="input--style-2 " name="situation" formControlName="situation_F">
+                                                        <option value="" selected disabled>Situation familliale</option>
+                                                        <option value="Celebataire">Celebataire</option>
+                                                        <option value="mariee">mariee</option>
+                                                        <option value="divorce">divorce</option>
+                                                        
+                                                    </select>
+                                                    
+                                                </div></div></div>
+        
+        
+                                                        <div class="row row-space">
+                                                            <div class="col-2">
+                                                                <div class="input-group">
+                                                                    <textarea formControlName="note" name="note" class="input--style-" cols="50" rows="10" placeholder="Note"></textarea>
+                                                                    
+                                                                       </div>
+                                                            </div>
+                                                            </div>
+                                
+        
+                            </form>
+                        </div>
+        
+                        
+                                                                              
+        
+                    </div>
+                    <button class="btn btn--radius btn--green p-l-50" type="submit" (click)="handelSubmit()">Valider</button>
+                </div>
+            </div>

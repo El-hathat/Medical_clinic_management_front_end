@@ -1,0 +1,17 @@
+
+.menu{
+    background: #0000FF;
+    color: #fff;
+    padding: 5px;
+    
+   
+    
+}
+.menu-item{
+    cursor: pointer;
+    padding: 5px 0;
+}
+.menu-item:hover{
+    text-decoration: dashed;
+
+}

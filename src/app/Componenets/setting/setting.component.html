@@ -1,0 +1,74 @@
+<app-admin></app-admin>
+
+<section id="content">
+    <!-- MAIN -->
+    <main>
+        <div class="head-title">
+            <div class="left">
+                <h1>Parametres</h1>
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="#">Parametres</a>
+                    </li>
+                    <li><i class='bx bx-chevron-right' ></i></li>
+                    <li>
+                        <a class="active" routerLink='/Admin'>Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+ 
+
+<div class="main-content">
+    <div class="main-sidebar">
+        <img src="./assets/img/people.png" alt="" class="sidebar-image">
+        <h2 class="name-label"> gaadi hanae</h2>
+        <ul class="links-list">
+            <li class="link-item" ><a routerLink="/profile" style="color: white;">mon compte</a></li>
+            <li class="link-item" ><a routerLink="/updatepwd" style="color: black;">mot de passe</a></li>
+            <li class="link-item" style="color: brown;" routerLink="/">deconnexion</li>
+        </ul>
+    </div>
+    <div class="main-content-form">
+        <h2>Parametres du compte </h2>
+        <form action="#" [formGroup]="medForm">
+            <div class="form-row">
+                <div class="form-field">
+                    <label for="fname">CIN</label>
+                    <input formControlName="cin" type="text" name="fname" id="fname" value="{{data.cin}}" readonly/>
+                   
+                </div>
+                <div class="form-field">
+                    <label for="fname">Nom</label>
+                    <input  formControlName="nom"  type="text" name="fname" id="fname"   [(ngModel)] = "data.nom"/>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-field">
+                    <label for="fname">Prenom</label>
+                    <input formControlName="prenom"  type="text" name="fname" id="fname"  [(ngModel)] = "data.prenom" />
+                </div>
+                <div class="form-field">
+                    <label for="fname">Email</label>
+                    <input  formControlName="email"  type="email" name="fname" id="fname"  [(ngModel)] = "data.email"   />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-field">
+                    <label for="fname">Nom cabinet</label>
+                    <input formControlName="nom_cabinet" type="text" name="fname" id="fname" value="{{data.nom_cabinet}}" readonly/>
+                </div>
+                <div class="form-field">
+                    <label for="fname">Role</label>
+                    <input formControlName="role"  type="text" name="fname" id="fname" value="{{data.role}}" readonly/>
+                </div>
+            </div>
+           
+            <div class="buttons">
+                <a routerLink="/profile" class="button button-primary"  (click)=" handelSubmit()">Modifier</a>
+                <a  class="button"  onclick="history.go(-1)" >Annuler</a>
+            </div>
+        </form>
+    </div>
+   
+</div>

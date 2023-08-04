@@ -1,0 +1,27 @@
+<app-started></app-started>
+
+            <div class="form-box">
+                
+               
+                <h1 style="color: azure;">
+                    
+                        Log in
+                    </h1>
+                    
+                <form [formGroup]="formGroup" (ngSubmit)="loginProcess()" id='login' class='input-group-login'>
+                    
+                    <input type='text' class='input-field'placeholder='Email Id' name="email" formControlName="username"/>
+		    <input type='password' class='input-field'placeholder='Enter Password' name="pwd" formControlName="password" />
+		    <input type='checkbox'class='check-box'><span>Remember Password</span>
+		    <button type='submit'class='submit-btn' > Log in</button>
+     
+		 </form>
+         <br><br><br><br><br><br><br><br><br>
+         <br><br><br><br><br><br><br><br><br><br><br><hr>
+         <br>
+         <button type='submit'class='cr' routerLink="/register">créer nouveau compte</button>
+           
+        </div>
+    
+
+        

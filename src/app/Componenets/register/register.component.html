@@ -1,0 +1,26 @@
+
+
+<app-started></app-started>
+            <div class="form-box">
+				<div class="bb">
+					<i class='bx bxs-log-out' style="margin-left: 330px;font-size: 40px;" onclick="history.go(-1)"></i>
+				</div>
+				
+                <br>
+                <br>
+                <br>
+                <h1 style="color: azure;margin-top: -40px;">Inscription</h1>
+             
+		 <form [formGroup]="medForm" (ngSubmit)=" handelSubmit()" id='register' class='input-group-register' style="margin-top: -55px;">
+			<input  type='text' formControlName="cin" class='input-field'placeholder='CIN' required>
+			<input  type='text' formControlName="nom" class='input-field'placeholder='Nom' required>
+		     <input  type='text' formControlName="prenom" class='input-field'placeholder='Prenom' required>
+			 <input type='text' formControlName="nom_cabinet"class='input-field'placeholder='Nom cabinet' required>
+
+		     <input type='text' formControlName="email" class='input-field'placeholder='Email ' required>
+		     <input type='email' formControlName="pwd"class='input-field'placeholder='Mot de passe' required>
+		     <input type='checkbox'class='check-box'><span>I agree to the terms and   conditions</span>
+                    <button type='submit'class='submit-btn'>Register</button>
+	         </form>
+            </div>
+      

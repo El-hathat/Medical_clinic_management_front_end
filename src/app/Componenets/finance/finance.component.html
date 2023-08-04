@@ -1,0 +1,100 @@
+<app-admin></app-admin>
+
+		
+		
+		<section id="content">
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Finanace</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Finanace</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" routerLink='/Admin'>Home</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+     
+
+			
+	
+	 <div class="wst">
+	
+        <div class="wrapper wrapper--w960"  >
+            <div class="tete">
+                <div class="container" style="margin-left: -215%">
+                   
+                    <div class="element" ><input class="elemt" type="date" name="" id="" style="height: 40PX;" [(ngModel)]="dateDeb" (input)="dateDebHandle()">
+                    </div>
+                    <div class="element"><input class="elems" type="date" name="" id="" style="height: 40PX;"  [(ngModel)]="dateFin" (input)="datefinHandle()">
+                    </div>
+                    <div class="element" > <input  class="elemts" class="btn btn--radius btn--blue1" class="input--style-2" type="text" placeholder="&#xF002; Montant totale :{{montant}}" name="mt" style="height: 40px;" disabled>
+                    </div>
+                  </div>
+               
+        </div>
+        <br>
+	<table>
+		<thead>
+			<td class="table-header">CIN</td>
+			<td class="table-header">nom</td>
+			<td class="table-header">prenom</td>
+			<td class="table-header">Date_consultation</td>
+			<td class="table-header">Montant</td>
+			
+		</thead>
+		<tbody> 
+			
+			<tr *ngFor="let consul of consultation">
+				<td>{{consul.patient.cin}}</td>
+				<td>{{consul.patient.nom}}</td>
+				<td>{{consul.patient.prenom}}</td>
+				<td>
+					{{consul.dateConsultation}}
+				</td>
+				<td>{{consul.prix}}</td>
+				
+			</tr>
+			
+		</tbody>
+	</table>
+			
+			
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

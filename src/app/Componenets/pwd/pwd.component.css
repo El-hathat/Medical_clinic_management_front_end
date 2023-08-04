@@ -1,0 +1,129 @@
+
+.main-content{
+	padding: 20px;
+	border-radius: 20px;
+	background-color: white;
+	display: flex;
+	gap: 10px;
+}
+
+.main-content-form{
+	width: 100%;
+}
+
+.main-sidebar{
+	padding-top: 50px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 200px;
+	border-right: 1px solid rgb(199, 199, 199);
+}
+
+.sidebar-image{
+	width: 70px;
+	height: 70px;
+	border-radius: 50px;
+}
+
+.name-label{
+	padding: 20px 0;
+	font-size: 18px;
+}
+
+.links-list{
+	list-style: none;
+	width: 100%;
+}
+
+.link-item{
+	padding: 10px 20px;
+	width: 100%;
+	border-top: 1px solid rgb(199, 199, 199);
+	border-bottom: 1px solid rgb(199, 199, 199);
+}
+
+
+
+
+.main-content h2{
+	font-weight: 600;
+	padding: 20px 0;
+	display: flex;
+}
+
+.form-row{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	padding-top: 20px;
+}
+
+.form-field{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	gap: 10px;
+}
+
+.form-field input, textarea{
+	padding: 10px;
+	width: 100%;
+	border-radius: 5px;
+	border: 1px solid rgb(156, 156, 156);
+}
+
+.buttons{
+	padding: 20px 0;
+	width: 100%;
+	display: flex;
+	justify-content: start;
+	gap: 10px;
+}
+
+.button{
+	color: #8a8a8a;
+	border-radius: 5px;
+	padding: 7px 32px;
+	background-color:#e8542B;
+	transition: all .3s ease-in-out;
+}
+
+.button:hover{
+	color: #CFE8FF;
+	background-color:#e8542B;
+}
+
+.button-primary{
+	color: white;
+	background-color: #3C91E6;
+}
+
+.button-primary:hover{
+	background: #0053a7;
+}
+
+
+.dropdown{
+	display: none;
+	position: absolute;
+	top: 13%;
+	right: 10px;
+	z-index: 1001;
+
+	padding: 10px;
+	background-color: white;
+}
+
+
+.dropdon-item{
+	padding: 0 10px;
+}
+
+.dropdon-item:hover{
+	color: white;
+	background-color: #0d56f5;
+}
+
+

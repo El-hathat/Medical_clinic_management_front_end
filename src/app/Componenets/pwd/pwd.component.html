@@ -1,0 +1,65 @@
+<app-admin></app-admin>
+
+<section id="content">
+    <!-- MAIN -->
+    <main>
+        <div class="head-title">
+            <div class="left">
+                <h1>Utilisateurs</h1>
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="#">Utilisateurs</a>
+                    </li>
+                    <li><i class='bx bx-chevron-right' ></i></li>
+                    <li>
+                        <a class="active" routerLink='/Admin'>Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+ 
+
+<div class="main-content">
+    <div class="main-sidebar">
+        <img src="./assets/img/people.png" alt="" class="sidebar-image">
+        <h2 class="name-label">gaadi hanae</h2>
+        <ul class="links-list">
+            <li class="link-item" ><a routerLink="/profile" style="color: black;">mon compte</a></li>
+            <li class="link-item" style="color: white;
+            border-color:  #0e69f1;
+            background-color:  #0e69f1;" ><a routerLink="/updatepwd"  style="color: white;">mot de passe</a></li>
+            <li class="link-item" style="color: brown;" routerLink="/">deconnexion</li>
+        </ul>
+    </div>
+    <div class="main-content-form">
+        <h2>changer le mot de passe </h2>
+        <form action="#">
+            <div class="form-row">
+                <div class="form-field">
+                    <label for="fname">ancien mot de passe</label>
+                    <input type="text" name="fname" id="fname" [(ngModel)]="a"/>
+                </div>
+              
+            </div>
+            <div class="form-row">
+                <div class="form-field">
+                    <label for="fname">Nouveau mot de passe</label>
+                    <input type="text" name="fname" id="fname" [(ngModel)]="b"/>
+                </div>
+             
+            </div>
+            <div class="form-row">
+                <div class="form-field">
+                    <label for="fname">Confirmer le nouveau mot de passe</label>
+                    <input type="text" name="fname" id="fname" [(ngModel)]="c"/>
+                </div>
+           
+            </div>
+           
+            <div class="buttons">
+                <a routerLink="/updatepwd" class="button button-primary" (click)="modpwd(cin)">Modifier</a>
+                <a href="/" class="button">Annuler</a>
+            </div>
+        </form>
+    </div>
+</div>

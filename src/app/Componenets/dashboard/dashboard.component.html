@@ -1,0 +1,76 @@
+
+<app-admin></app-admin>
+<html>
+    <body>
+        
+    	<!-- CONTENT -->
+	<section id="content">
+    <main>
+        
+        <div class="head-title">
+            <div class="left">
+                <h1>Dashboard</h1>
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="#">Dashboard</a>
+                    </li>
+                    <li><i class='bx bx-chevron-right' ></i></li>
+                    <li>
+                        <a class="active" routerLink='/Admin'>Home</a>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+
+        <ul class="box-info">
+            <li>
+                <i class='bx bxs-calendar-check' ></i>
+                <span class="text">
+                    <h3>{{nbrdv}}</h3>
+                    <p>RDVs</p>
+                </span>
+            </li>
+            <li>
+                <i class='bx bxs-group' ></i>
+                <span class="text">
+                    <h3>{{nb}}</h3>
+                    <p>Patients</p>
+                </span>
+            </li>
+            <li>
+                <i class='bx bxs-dollar-circle' ></i>
+                <span class="text">
+                    <h3>{{totalecaisse}}DH</h3>
+                    <p>Caisse </p>
+                </span>
+            </li>
+        </ul>
+
+
+        <div class="table-data">
+            <div class="order">
+               
+               
+                    <canvas id="myChart" style="width: 400px; height: 400px;"></canvas>
+                
+            </div>
+            <div class="todo">
+                
+                    <canvas id="otherChart" style="width: 400px; height: 600px;"></canvas>
+                   
+            
+               
+                
+                
+            </div>
+        </div>
+    </main>
+    <!-- MAIN -->
+</section>
+<!-- CONTENT -->
+
+
+
+</body>
+</html>

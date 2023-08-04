@@ -1,0 +1,97 @@
+<app-admin></app-admin>
+
+		
+		
+		<section id="content">
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					
+					<h1>Utilisateurs</h1>
+					
+					<ul class="breadcrumb">
+
+						<li>
+							<a href="#">Patients</a>
+						</li>
+						
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" routerLink='/Admin'>Home</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+
+    <div class="wrapper wrapper--w960" >
+        <div class="row row-space">
+            <div class="col-2">
+                    <a class="btn btn--radius  btn-head"  onclick="history.go(-1)" >Dossier Medicale</a>
+                      
+            </div>
+            <div class="col-2">
+                
+                    <a class="btn btn--radius " style="margin-left: -360px;background-color: cadetblue;" >Consultation</a>
+                </div></div>
+        <div class="card card-2" >
+            <div class="card-heading" >
+                <table>
+                    <tr>
+                        <th style="max-width: 1cm;padding-right: -2cm;">N°</th><th>CIN</th><th>Date</th><th>Taille</th><th>Poids</th><th>Temperature</th>
+                        <th>freq. cardiaque</th><th>Actions</th>
+                    </tr>
+                    <tr *ngFor="let cons of lesConsult">
+                        <td style="padding-left:20px;" >{{cons.num}}</td><td style="padding-left:20px;">{{cons.patient.cin}}</td><td>{{cons.dateConsultation}}</td><td style="padding-left:20px;">{{cons.taille}}cm</td>
+                        <td style="padding-left:20px;">{{cons.poids}}kg</td><td style="padding-left:50px;">{{cons.tempr}}°c</td><td style="padding-left:50px;">{{cons. frq_card}}bpm</td>
+                        <td> <div class="btn btn--radius blue1 " style="background-color:rgb(255, 0, 0);" (click)="versCertificat(cons.num)"><i style="font-weight: 900;" class='bx bx-book-add' id="upd" ></i></div>
+                         
+                        </td>
+                    </tr>
+                </table>
+               
+            </div>
+            <div class="vertical-line"></div>
+            <div class="card-body" >
+                <h2 class="title">Consultation Info</h2>
+
+                <form [formGroup]="consForm" (ngSubmit)=" handelSubmit()">
+                    <div class="input-group">
+                        <input class="input--style-2" type="text"  name="cin" value="{{this.cin}}"   disabled>
+                    </div>
+
+                    <div class="input-group">
+                        <input formControlName="poids" class="input--style-2" type="number" placeholder="Poids" name="poids">
+                    </div>
+                    
+                    <div class="input-group">
+                        <input formControlName="taille"class="input--style-2" type="number" placeholder="Taille" name="taille">
+                    </div>
+                    
+                    <div class="input-group">
+                        <input formControlName="tempr" class="input--style-2" type="number" placeholder="Temperature" name="temperature">
+                    </div>
+                    
+                    <div class="input-group">
+                        <input formControlName="frq_card" class="input--style-2" type="number" placeholder="Freq. Cardiaque" name="frq_card">
+                    </div>
+                    <div class="input-group">
+                        <input formControlName="prix"class="input--style-2" type="text" placeholder="prix" name="prix">
+                    </div>
+                    <div class="input-group">
+                 <textarea  formControlName="designation" class="input--style-2" placeholder="designation" name="designation"></textarea>
+                </div>
+           
+
+                <div style="padding-left: 20px;justify-content:space-between ;" >
+                    <button class="btn btn--radius btn--green" type="submit" >Valider</button>
+                   </div>
+                   
+                
+            
+                    
+                </form>
+            </div>
+        </div>
+    </div>
